@@ -1,0 +1,11 @@
+# Ignore virtual environment
+.venv
+
+# Ignore pytest cache
+.pytest_cache
+
+# Python caches
+__pycache__/
+
+# VSCode ignores
+.vscode/
