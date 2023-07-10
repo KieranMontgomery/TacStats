@@ -12,3 +12,7 @@ __pycache__/
 
 # Development folder
 dev/
+
+# Log files
+*.log
+logs/
