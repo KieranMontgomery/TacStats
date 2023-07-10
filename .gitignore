@@ -9,3 +9,6 @@ __pycache__/
 
 # VSCode ignores
 .vscode/
+
+# Development folder
+dev/
