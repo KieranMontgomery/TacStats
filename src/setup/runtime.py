@@ -9,10 +9,13 @@ class Runtime:
     Runtime is a static class that holds the runtime state of the program.
     """
 
+    fixture_insert = False
+
     @staticmethod
     def init(parsed_args: argparse.ArgumentParser):
         Runtime.parse_files(parsed_args.files)
         Runtime.set_logging_level(parsed_args.verbose)
+        Runtime.set_booleans(parsed_args)
 
     @staticmethod
     def parse_files(parsed_files: list):
@@ -46,3 +49,7 @@ class Runtime:
                 logger.setLevel("WARNING")
             case _:
                 logger.setLevel("ERROR")
+
+    @staticmethod
+    def set_booleans(parsed_args: argparse.ArgumentParser):
+        Runtime.fixture_insert = parsed_args.fixture_insert
