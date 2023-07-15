@@ -1,6 +1,8 @@
 import os
 import argparse
 
+from utils.logger import logger
+
 
 class Runtime:
     """
@@ -10,6 +12,7 @@ class Runtime:
     @staticmethod
     def init(parsed_args: argparse.ArgumentParser):
         Runtime.parse_files(parsed_args.files)
+        Runtime.set_logging_level(parsed_args.verbose)
 
     @staticmethod
     def parse_files(parsed_files: list):
@@ -31,3 +34,15 @@ class Runtime:
             if file.endswith(".acmi"):
                 files.append(os.path.join(dir, file))
         return files
+
+    @staticmethod
+    def set_logging_level(verbose_level):
+        match verbose_level:
+            case 3:
+                logger.setLevel("DEBUG")
+            case 2:
+                logger.setLevel("INFO")
+            case 1:
+                logger.setLevel("WARNING")
+            case _:
+                logger.setLevel("ERROR")
