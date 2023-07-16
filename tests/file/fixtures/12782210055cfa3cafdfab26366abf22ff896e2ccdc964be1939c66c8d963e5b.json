@@ -1,0 +1,17 @@
+{
+    "input": "FileType=text/acmi/tacview\nFileVersion=2.2\n0,ReferenceTime=2016-07-20T02:46:20Z\n0,RecordingTime=2022-04-22T21:12:37.373Z\n0,Title=CC_Feltzer_1.0\n0,DataRecorder=DCS2ACMI 1.8.7.200\n0,DataSource=DCS 2.7.11.22211\n0,Author=Devil 3-4 | Water\n0,ReferenceLongitude=36\n0,ReferenceLatitude=38\n",
+    "output": {
+        "metadata": {
+            "file_type": "text/acmi/tacview",
+            "file_version": "2.2",
+            "reference_time": "2016-07-20T02:46:20Z",
+            "recording_time": "2022-04-22T21:12:37.373Z",
+            "title": "CC_Feltzer_1.0",
+            "data_recorder": "DCS2ACMI 1.8.7.200",
+            "data_source": "DCS 2.7.11.22211",
+            "author": "Devil 3-4 | Water",
+            "reference_longitude": "36",
+            "reference_latitude": "38"
+        }
+    }
+}

@@ -22,4 +22,10 @@ def parse_args(args):
         help="Enable verbose logging. Can be used multiple times (up to 3x) to increase verbosity.",  # noqa
     )
 
+    parser.add_argument(
+        "--fixture-insert",
+        action="store_true",
+        help="Inserts the file and its results into the fixtures directory.",
+    )
+
     return parser.parse_args(args)
