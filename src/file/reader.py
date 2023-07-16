@@ -1,9 +1,9 @@
-from utils.logger import logger
-from setup.runtime import Runtime
-
-import pathlib
 import hashlib
 import json
+import pathlib
+
+from setup.runtime import Runtime
+from utils.logger import logger
 
 from .metadata import Metadata
 

@@ -1,10 +1,10 @@
+import sys
+import time
+
+from file.reader import FileReader
 from setup.args import parse_args
 from setup.runtime import Runtime
 from utils.logger import logger
-from file.reader import FileReader
-
-import sys
-import time
 
 if __name__ == "__main__":
     t0 = time.perf_counter()

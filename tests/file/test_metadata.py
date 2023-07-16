@@ -1,5 +1,6 @@
-from src.file.metadata import Metadata
 import unittest
+
+from src.file.metadata import Metadata
 
 
 class TestMetadata(unittest.TestCase):

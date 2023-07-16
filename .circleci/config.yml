@@ -17,6 +17,7 @@ jobs:
       - run: curl -sSL https://install.python-poetry.org | POETRY_VERSION=1.5.0 python3 -
       - run: poetry install --no-ansi
       - run: poetry run flake8 src/
+      - run: poetry run isort . -c
   test:
     docker:
       - image: cimg/python:3.11.4
