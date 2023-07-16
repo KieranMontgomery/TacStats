@@ -19,4 +19,4 @@ if __name__ == "__main__":
         file_reader.read()
 
     t1 = time.perf_counter()
-    print(f"Finished in {t1 - t0:0.5f} seconds")
+    logger.info(f"Finished in {t1 - t0:0.5f} seconds")
