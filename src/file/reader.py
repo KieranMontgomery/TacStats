@@ -15,17 +15,11 @@ class FileReader:
 
     def read(self):
         logger.debug(f"Reading {self.metadata.filename}")
-        with open(self.metadata.filename, "r") as file:
+        with open(self.metadata.filename, "r", encoding="utf-8-sig") as file:
             file = file.read()
             self.hash = hashlib.sha256(file.encode("utf-8")).hexdigest()
 
-        lines = file.split("\n")
-
-        # First two lines are always required and contain metadata
-        self.metadata.add(lines[:2])
-
-        # Read the rest of the file
-        for line in lines[2:]:
+        for line in file.split("\n"):
             self._read_line(line)
 
         if Runtime.fixture_insert:
@@ -48,7 +42,9 @@ class FileReader:
             json.dump(content, file, indent=4)
 
     def _read_line(self, line):
-        if line.startswith("0,"):  # Metadata
+        if line.startswith("0,") or any(
+            line.startswith(element) for element in ["FileType", "FileVersion"]
+        ):  # Metadata
             self.metadata.add(line)
 
     def to_dict(self):

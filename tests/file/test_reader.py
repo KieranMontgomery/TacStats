@@ -22,7 +22,7 @@ class TestFileReader(unittest.TestCase):
             "builtins.open", mock.mock_open(read_data=self.file_contents)
         ) as mock_file:
             self.reader.read()
-            mock_file.assert_called_once_with(self.filename, "r")
+            mock_file.assert_called_once_with(self.filename, "r", encoding="utf-8-sig")
 
     def test_fixtures(self):
         for os_file in os.listdir("tests/file/fixtures"):

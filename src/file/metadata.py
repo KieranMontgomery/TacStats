@@ -14,7 +14,7 @@ class Metadata:
             self._read_line(line)
 
     def _read_line(self, line):
-        if "FileType" in line:
+        if line.startswith("FileType"):
             self.file_type = line.split("=")[1].strip()
         elif line.startswith("FileVersion"):
             self.file_version = line.split("=")[1].strip()
