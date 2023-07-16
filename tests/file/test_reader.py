@@ -1,10 +1,11 @@
+import json
+import os
+import pathlib
 import unittest
 import unittest.mock as mock
 from unittest.mock import patch
+
 from src.file.reader import FileReader
-import os
-import json
-import pathlib
 
 
 class TestFileReader(unittest.TestCase):
